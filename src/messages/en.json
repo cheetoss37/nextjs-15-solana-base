@@ -1,0 +1,8 @@
+{
+  "Common": {
+    "lHome": "Home",
+    "lConnectWallet": "Connect Wallet",
+    "lBalance": "Balance",
+    "lLogout": "Logout"
+  }
+}

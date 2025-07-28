@@ -1,0 +1,295 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant light (&:is(.light *));
+
+@theme inline {
+  --font-inria-sans: var(--font-inria-sans);
+  --font-jaro: var(--font-jaro);
+  --font-kdam: var(--font-kdam);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-neutral-4: #c4c9d3;
+  --color-success: var(--success);
+  --color-blue-100: var(--blue-100);
+  --color-brown-100: var(--brown-100);
+  --color-brown-200: var(--brown-200);
+  --color-brown-300: var(--brown-300);
+  --color-green-100: var(--green-100);
+  --color-error-100: var(--error-100);
+  --color-error-200: var(--error-200);
+  --color-yellow-100: var(--yellow-100);
+  --color-yellow-200: var(--yellow-200);
+  --color-warning-100: var(--warning-100);
+  --color-dark-green-100: var(--dark-green-100);
+  --color-dark-green-200: var(--dark-green-200);
+
+  --background-image-linear-brown:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    radial-gradient(
+      73.23% 921.76% at 73.05% 50%,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(250, 197, 122, 0.2) 88.59%
+    );
+  --background-image-linear-blue:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    radial-gradient(
+      78.28% 1852.82% at 78.28%57.5%,
+      rgba(59, 156, 247, 0) 0%,
+      rgba(59, 156, 247, 0.2) 100%
+    );
+  --background-image-linear-green:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    radial-gradient(
+      84.49% 478% at 0% 19.87%,
+      rgba(25, 225, 135, 0.1) 0%,
+      rgba(25, 225, 135, 0) 100%
+    );
+  --background-image-linear-white:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    radial-gradient(
+      84.49% 478% at 0% 19.87%,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+  --animate-top-sliding: 2s infinite forwards top-sliding;
+  --animate-hovering-x: hovering-x 1.5s linear infinite;
+  --animate-heart-beat: beating 0.6s ease-in infinite;
+  --animate-scale-spring: scale-spring 0.3s linear;
+  --animate-marquee: marquee 180s linear infinite;
+  --animate-rotate: rotating 2s linear infinite;
+  --animate-enter: enter-frame 0.2s linear;
+  --animate-entry: new-entry 0.2s linear;
+  --animate-scale-up: scale-up 1s linear;
+  --animate-shaking: shaking 0.2s linear;
+  --animate-pop-up: pop-up 0.1s linear;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pop-up {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-spring {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.98;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shaking {
+  0% {
+    transform: rotate(0deg);
+    scale: 1;
+  }
+  25% {
+    transform: rotate(2deg);
+    scale: 1;
+  }
+  50% {
+    transform: rotate(0eg);
+    scale: 1.05;
+  }
+  75% {
+    transform: rotate(-2deg);
+    scale: 1;
+  }
+  100% {
+    transform: rotate(0deg);
+    scale: 1;
+  }
+}
+
+@keyframes hovering-x {
+  0%,
+  100% {
+    transform: translateX(-15%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes enter-frame {
+  0% {
+    opacity: 0;
+    /* scale: 0; */
+  }
+  50% {
+    opacity: 0.5;
+    /* scale: 1.05; */
+  }
+  100% {
+    opacity: 1;
+    /* scale: 1; */
+  }
+}
+
+@keyframes beating {
+  0% {
+    scale: 0.9;
+  }
+  33% {
+    scale: 1.05;
+  }
+  66% {
+    scale: 1;
+  }
+  100% {
+    scale: 0.9;
+  }
+}
+
+@keyframes top-sliding {
+  0% {
+    transform: translate(-100%);
+  }
+  100% {
+    transform: translate(200%);
+  }
+}
+
+@keyframes new-entry {
+  0% {
+    transform: translateY(-50px) rotateX(50deg);
+    scale: 1;
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-25px) rotateX(25deg);
+    scale: (1.1);
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg);
+    scale: (1);
+    opacity: 1;
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --blue-100: #3b9cf7;
+  --brown-100: #fac57a;
+  --brown-200: #c27c00;
+  --brown-300: #d19710;
+  --error-100: #dd6654;
+  --error-200: #1e0906;
+  --green-100: #19e187;
+  --success: #76d638;
+  --warning-100: #f8c243;
+  --yellow-100: #ffeb49;
+  --yellow-200: #fab40f;
+  --dark-green-100: #0a1008;
+  --dark-green-200: #0e1510;
+}
+
+.light {
+  --background: #ffffff;
+  --foreground: #171717;
+  --blue-100: #3b9cf7;
+  --brown-100: #fac57a;
+  --brown-200: #c27c00;
+  --brown-300: #d19710;
+  --error-100: #dd6654;
+  --error-200: #1e0906;
+  --green-100: #19e187;
+  --success: #76d638;
+  --warning-100: #f8c243;
+  --yellow-100: #ffeb49;
+  --yellow-200: #fab40f;
+  --dark-green-100: #0a1008;
+  --dark-green-200: #0e1510;
+}
+
+@layer base {
+  html {
+    @apply overflow-x-hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .center-root {
+    @apply flex items-center justify-center;
+  }
+
+  .space-between-root {
+    @apply flex items-center justify-between;
+  }
+}
+
+#_rht_toaster {
+  right: 0 !important;
+  left: 0 !important;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  display: flex;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
